@@ -35,7 +35,7 @@ Post.init(
       allowNull: false,
       references: {
         Model: "user",
-        key: "id",
+        key: "user_id",
       },
     },
   },

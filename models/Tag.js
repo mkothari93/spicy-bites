@@ -7,19 +7,32 @@ class Tag extends Model {}
 Tag.init(
   {
     id: {
-      //Defines data type as a Integer
       type: DataTypes.INTEGER,
-      //Defines that it shouldn't allow null values
       allowNull: false,
-      //Defines that this is the Primary Key
       primaryKey: true,
-      //Defines to auto increment
       autoIncrement: true,
     },
     tag_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+      validate: {
+        len: [1]
+      }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
+    post_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'post',
+        key: 'id'
+      }
+    },
   },
   {
     sequelize,

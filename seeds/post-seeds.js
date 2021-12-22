@@ -6,6 +6,8 @@ const postdata = [
     recipe_name: "Alfredo Pasta",
     recipe_body: "lorem",
     user_id: 1,
+    category_name: "lunch",
+    tag_name: "italian"
   },
   {
     recipe_name: "Chicken marsala",

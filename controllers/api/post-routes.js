@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, Category, User } = require("../../models");
+const { Post, Category, Tag, User } = require("../../models");
 
 //The `/api/posts` endpoint
 
@@ -8,6 +8,10 @@ router.get("/", (req, res) => {
   Post.findAll({
     //Includes its associated Category and User
     include: [
+      {
+        model: Tag,
+        attributes: ["id", "tag_name"]
+      },
       {
         model: Category,
         attributes: ["id", "category_name"],
@@ -33,6 +37,10 @@ router.get("/:id", (req, res) => {
     },
     //Includes its associated Categories and User
     include: [
+        {
+          model: Tag,
+          attributes: ["id", "tag_name"]
+        },
         {
           model: Category,
           attributes: ["id", "category_name"],

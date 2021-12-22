@@ -25,6 +25,10 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    tag: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     // image: {
     //     type: DataTypes.IMAGE, 
     // },

@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { del } = require("express/lib/application");
 const { Category, Post } = require("../../models");
 
 //The `/api/categories` endpoint

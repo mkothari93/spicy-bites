@@ -34,10 +34,9 @@ Post.belongsToMany(Tag, {
   foreignKey: "post_id",
 });
 
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
-  as: "description",
+// Tags belongToMany Post (through PostTag)
+Tag.belongsToMany(Post, {
+  through: PostTag,
   foreignKey: "tag_id",
 });
 

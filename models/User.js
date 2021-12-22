@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 
 
 class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+  checkPassword(loginPassword) {
+    return bcrypt.compareSync(loginPassword, this.password);
   }
 }
 
@@ -40,16 +40,15 @@ User.init(
         len: [8],
       },
     },
-    //add hashing password
   },
   {
     hooks: {
-      // set up beforeCreate lifecycle "hook" functionality
+      // hash new user data
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      // set up beforeUpdate lifecycle "hook" functionality
+      // hash password then update it
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;

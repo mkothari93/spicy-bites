@@ -1,8 +1,12 @@
 const express = require('express');
 const path=require("path")
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 //Imports routes
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+
 
 //Imports sequelize connection
 const sequelize = require('./config/connection')
@@ -26,3 +30,14 @@ sequelize.sync({force:false}).then(() => {
     console.log(`App listening on port ${PORT}!`);
   });
 })
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));

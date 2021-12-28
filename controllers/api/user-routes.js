@@ -53,19 +53,19 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/login', (req, res) => {
+router.post('/signup', (req, res) => {
   // expects {username: 'Lernantino',  password: 'password1234'}
   User.create({
     username: req.body.username,
     password: req.body.password
   })
     .then(dbUserData => {
+      req.session.userid = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+  
       req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-
-        res.json(dbUserData);
+        res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
     })
     .catch(err => {
@@ -92,11 +92,11 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    req.session.save(() => {
-      req.session.id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
+    req.session.userid = dbUserData.id;
+    req.session.username = dbUserData.username;
+    req.session.loggedIn = true;
 
+    req.session.save(() => {
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });

@@ -1,14 +1,18 @@
-<article class="post">
+<article class='post'>
 
-  <div class="title">
-    {{post.title}}
+  <div class='title'>
+    <a href='/post/{{post.id}}'>{{post.recipe_name}}</a>
   </div>
 
-  <div class="meta">
+  <div class='meta'>
+    {{post.recipe_name}}
+    {{post.recipe_body}}
+  </div>
+
+  <div class='meta'>
     Posted by
     {{post.user.username}}
     on
     {{post.created_at}}
   </div>
-
 </article>

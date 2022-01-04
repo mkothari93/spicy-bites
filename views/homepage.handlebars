@@ -1,0 +1,28 @@
+<ol class='post-list'>
+  {{#each posts}}
+    <li>
+      <article class='post'>
+        <div class='title'>
+          <a href='/post/{{post.id}}'>{{recipe_name}}</a>
+        </div>
+
+        <div class='meta'>
+          by
+          {{user.username}}
+          on
+          {{format_date created_at}}
+        </div>
+
+        <div class='meta'>
+          {{recipe_body}}
+        </div>
+
+        {{!-- <div class="meta">
+        Cetegory:
+        {{category}}
+      </div> --}}
+
+      </article>
+    </li>
+  {{/each}}
+</ol>

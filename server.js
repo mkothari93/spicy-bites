@@ -26,7 +26,7 @@ const sess = {
     db: sequelize
   })
 };
-
+app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -42,4 +42,4 @@ sequelize.sync({ force: false }).then(() => {
   });
 });
 
-app.use(session(sess));
+

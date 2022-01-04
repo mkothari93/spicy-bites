@@ -59,14 +59,14 @@ router.post('/signup', (req, res) => {
     username: req.body.username,
     password: req.body.password
   })
-    .then(dbUserData => {
+  .then((dbUserData) => {
+    req.session.save(() => {
       req.session.userid = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-  
-      req.session.save(() => {
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
-      });
+      res.json(dbUserData);
+    });
+
     })
     .catch(err => {
       console.log(err);
@@ -80,13 +80,14 @@ router.post('/login', (req, res) => {
       username: req.body.username
     }
   }).then(dbUserData => {
+    console.log(dbUserData)
     if (!dbUserData) {
       res.status(400).json({ message: 'Username does not exist!' });
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-
+    console.log(validPassword)
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;

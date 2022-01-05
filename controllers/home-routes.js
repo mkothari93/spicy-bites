@@ -12,7 +12,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/homepage', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
+    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     include: [
       {
         model: User,
@@ -37,7 +37,7 @@ router.get('/homepage', (req, res) => {
 // get all posts
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
+    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     include: [
       {
         model: User,
@@ -59,13 +59,38 @@ router.get('/', (req, res) => {
     });
 });
 
+// // get all posts
+// router.get('/', (req, res) => {
+//   Post.findAll({
+//     attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
+//     include: [
+//       {
+//         model: User,
+//         attributes: ['username']
+//       },
+//       {
+//         model: Category,
+//         attributes: ['category_name']
+//       }
+//     ]
+//   })
+//     .then((dbPostData) => {
+//       const posts = dbPostData.map((post) => post.get({ plain: true }));
+//       res.render('homepage', { posts });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
 // get one post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
+    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     include: [
       {
         model: User,

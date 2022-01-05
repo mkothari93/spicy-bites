@@ -5,7 +5,8 @@ const postdata = [
   {
     recipe_name: 'Chicken Alfredo',
     recipe_body:
-    `INGREDIENTS:
+    `
+    INGREDIENTS:
     For the Noodles:
     16 ounces dry fettuccine pasta
 
@@ -49,7 +50,8 @@ const postdata = [
   {
     recipe_name: 'Chicken Marsala',
     recipe_body:
-    `INGREDIENTS:
+    `
+    INGREDIENTS:
     1-1/2 pounds boneless skinless chicken breasts, pounded ¼-inch thick, or chicken tenderloins
     3 tablespoons all-purpose flour
     Salt

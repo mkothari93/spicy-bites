@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
   //Finds all posts
   Post.findAll({
-    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
+    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     //Includes its associated Category and User
     include: [
       {
@@ -41,7 +41,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
+    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     //Includes its associated Categories and User
     include: [
       {

@@ -35,7 +35,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/homepage');
     } else {
-      alert('Failed to sign up.');
+      alert('Failed to sign up. Please try another username.');
     }
   }
 };

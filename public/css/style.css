@@ -83,9 +83,30 @@ nav a {
   font-size: 18px;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  border: none;
+  align-items: center;
+  padding: 30px;
+}
+
+.card-img {
+  height: 300px;
+  width: 300px;
+}
+
 img {
   height: 300px;
   width: 300px;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .post-list li{
@@ -152,5 +173,4 @@ img {
   color: var(--light);
   border-radius: 10px;
   padding: 5px 10px;
-  
 }

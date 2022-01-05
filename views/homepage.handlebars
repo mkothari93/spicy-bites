@@ -1,16 +1,16 @@
 <ul class='post-list'>
   {{#each posts}}
     <li>
-      <article class='post'>
-        <div class='postTitle'>
+      <article class='card post'>
+        <div class='card-title postTitle'>
           <a href='/post/{{id}}'>{{recipe_name}}</a>
         </div>
 
         <div>
-          <img src='images/{{filename}}' />
+          <img src='images/{{filename}}' class='card-img'/>
         </div>
 
-        <div class='postCreator'>
+        <div class='card-text postCreator'>
           by
           {{user.username}}
           on

@@ -4,8 +4,8 @@ const { Post } = require('../models');
 const postdata = [
   {
     recipe_name: 'Chicken Alfredo',
-    recipe_body: `
-    INGREDIENTS:
+    recipe_body:
+    `INGREDIENTS:
     For the Noodles:
     16 ounces dry fettuccine pasta
 
@@ -48,9 +48,9 @@ const postdata = [
   },
   {
     recipe_name: 'Chicken Marsala',
-    recipe_body: `
-    INGREDIENTS:
-    1-1/2 pounds boneless skinless chicken breasts, pounded ¼-inch thick (see note), or chicken tenderloins
+    recipe_body:
+    `INGREDIENTS:
+    1-1/2 pounds boneless skinless chicken breasts, pounded ¼-inch thick, or chicken tenderloins
     3 tablespoons all-purpose flour
     Salt
     Freshly ground black pepper
@@ -76,15 +76,76 @@ const postdata = [
     category_id: 3
   },
   {
-    recipe_name: 'Rice and beans',
-    recipe_body: 'lorem',
+    recipe_name: 'Brazilian Rice and Beans with Sausage',
+    recipe_body: 
+    `
+    INGREDIENTS:
+    2 teaspoons vegetable oil
+    8 ounces low-fat polish kielbasa sausage, cut into small pieces
+    1 large onion, chopped
+    1 clove garlic, minced, or 1/4 teaspoon garlic powder
+    1 red bell pepper, chopped
+    1 teaspoon ground cumin
+    1 cup uncooked rice
+    1 can (15 ounces) black beans, drained and rinsed
+    2 cups water
+
+    INSTRUCTIONS:
+    Heat oil over medium-high heat (350 degrees in an electric skillet); sauté sausage and onion until onion is clear.
+
+    Add remaining ingredients.
+
+    Bring to boil over high heat, reduce heat to low, cover, and simmer for 20 minutes.
+
+    Serve and enjoy!
+    `,
     filename: 'rice_beans.jpg',
     user_id: 2,
     category_id: 3
   },
   {
     recipe_name: 'Potato curry',
-    recipe_body: 'lorem',
+    recipe_body:
+    `
+    INGREDIENTS:
+    4 potatoes (medium sized) 280 grams, rinsed, peeled and chopped
+    ½ cup chopped onions 60 grams or 1 medium-sized onion
+    1 cup chopped tomatoes (tightly packed) 160 grams or 2 medium to large tomatoes
+    ½ teaspoon finely chopped garlic or 2 small to medium garlic cloves
+    3 tablespoons oil any neutral oil, you can also add 2 tablespoons oil
+    ½ teaspoon turmeric powder (ground turmeric)
+    1 teaspoon kashmiri red chilli powder or ½ teaspoon red chilli powder or cayenne pepper
+    ½ teaspoon Coriander Powder (ground coriander)
+    ½ teaspoon Garam Masala Powder
+    ½ teaspoon cumin powder (ground cumin) optional
+    2 cups water
+    ¼ cup chopped coriander leaves (cilantro)
+    salt as required
+
+    INSTRUCTIONS:
+    Heat oil in a pan or kadai. You can use any neutral flavored oil. My personal preference is to use peanut oil for this recipe.
+    Add finely chopped garlic and sauté for a few seconds. No need to brown garlic.
+    Next add chopped onions. Keep on stirring in intervals and sauté till they turn translucent.
+    Then add chopped tomatoes and mix very well.
+    Cover the pan with its lid and simmer on a low flame till the tomatoes soften and become mushy. Do check a couple of times when the tomatoes are cooking.
+    When the tomatoes have softened well, then add turmeric powder, kashmiri red chilli powder, coriander powder, garam masala powder and cumin powder (optional).
+    If you want to make a spicy curry then you can increase the red chilli powder or add ½ teaspoon chopped green chilli.
+    Mix the spice powders very well with the onion-tomato mixture.
+
+    Then add diced potatoes. Also season with salt as required. Mix very well.
+    Pour 2 cups water and mix again.
+
+    Cover the pan with its lid and simmer on a medium to medium-high heat until the potatoes are cooked.
+    Do check a couple of times when the curry is simmering.
+    The curry will thicken slightly by the time the potatoes are done.
+    You can adjust the consistency of the curry as per your needs. Example if you want to serve this potato curry with rice then you can add a bit more water and let the curry be slightly thin in consistency. In case you are planing to have it with roti or plain paratha, then you can add less water and make the curry consistency more thick.
+    Once you get the desired consistency in the curry, then switch off the heat and add chopped coriander leaves. Mix very well.
+    Serve potato curry hot or warm.
+
+    Serving Suggestions:
+    Indian breads: Roti, paratha, poori pair nicely with potato curry.
+    Rice: Steamed white rice or jeera rice also tastes good with potato curry.
+    `,
     filename: 'potato_curry.jpg',
     user_id: 4,
     category_id: 3

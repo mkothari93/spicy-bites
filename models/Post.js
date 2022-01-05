@@ -19,7 +19,8 @@ Post.init(
     },
     recipe_body: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      collate: 'utf8_general_ci'
     },
     filename: {
       type: DataTypes.STRING,
@@ -44,6 +45,8 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
+    charset: 'utf8', 
+    dialectOptions: { collate: 'utf8_general_ci' },
     modelName: 'post'
   }
 );

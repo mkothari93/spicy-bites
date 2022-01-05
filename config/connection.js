@@ -7,9 +7,20 @@ const sequelize = process.env.JAWSDB_URL
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
       host: 'localhost',
       dialect: 'mysql',
-      dialectOptions: {
-        decimalNumbers: true,
-      },
+      define: { 
+        charset: "utf8", 
+          dialectOptions: { 
+            decimalNumbers: true,
+            collate: "utf8_general_ci" 
+          } 
+      }
     });
+      
+    //   dialectOptions: {
+        
+    //     charset: 'utf8',
+    //     collate: 'utf8_general_ci',
+    //   },
+    // });
 
 module.exports = sequelize;

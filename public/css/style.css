@@ -175,3 +175,12 @@ img {
   border-radius: 10px;
   padding: 5px 10px;
 }
+
+.comment {
+  background-color: var(--tertiary);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 5px;
+  margin: 5px;
+}

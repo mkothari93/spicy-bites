@@ -31,8 +31,13 @@
     </form>
   {{/if}}
 
-{{> comments post.comments}}
-
+  <div class='comments'>
+    {{> comments post.comments}}
+    {{!-- Posted by
+    {{post.comments.user.username}}
+    on
+    {{post.comments.created_at}} --}}
+  </div>
 </article>
 
 {{#if loggedIn}}

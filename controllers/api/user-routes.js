@@ -40,12 +40,6 @@ router.get('/:id', (req, res) => {
           attributes: ['recipe_name']
         }
       }
-      //   {
-      //     model: Post,
-      //     attributes: ['title'],
-      //     through: Vote,
-      //     as: 'voted_posts'
-      //   }
     ]
   })
     .then((dbUserData) => {
@@ -68,7 +62,7 @@ router.post('/signup', (req, res) => {
   })
     .then((dbUserData) => {
       req.session.save(() => {
-        req.session.userid = dbUserData.id;
+        req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
         res.json(dbUserData);
@@ -99,7 +93,7 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    req.session.userid = dbUserData.id;
+    req.session.user_id = dbUserData.id;
     req.session.username = dbUserData.username;
     req.session.loggedIn = true;
 

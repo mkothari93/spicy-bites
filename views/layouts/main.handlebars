@@ -5,8 +5,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>Spicy Bites</title>
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel='stylesheet'
+      href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
     />
     <link rel='stylesheet' type='text/css' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
@@ -16,13 +16,13 @@
       <h1 class='text-center'>Welcome to Spicy Bites!</h1>
     </header>
 
-    <nav>
-      <!-- If the user is logged in, show a logout and home button -->
-      {{#if loggedIn}}      
+    <!-- If the user is logged in, show a logout and home button -->
+    {{#if loggedIn}}
+      <nav>
         <a href='/homepage'>Home</a>
         <a href='/login'>Logout</a>
-      {{/if}}
-    </nav>
+      </nav>
+    {{/if}}
 
     <main>
       <aside>

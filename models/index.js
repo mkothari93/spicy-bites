@@ -1,55 +1,53 @@
 // import all models
-const Post = require("./Post");
-const User = require("./User");
-const Category = require("./Category");
-const Tag = require("./Tag");
-const PostTag = require("./PostTag");
+const Post = require('./Post');
+const User = require('./User');
+const Category = require('./Category');
+const Comment = require('./Comment');
 
 //Create associations
 
 //User has many posts
 User.hasMany(Post, {
-  foreignKey: "user_id",
+  foreignKey: 'user_id'
 });
 
 //Post belongs to one user
 Post.belongsTo(User, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 //Post belongs to one Category
 Post.belongsTo(Category, {
-  foreignKey: "category_id",
-});
-
-//Post belongs to many tags (through PostTag)
-Post.belongsToMany(Tag, {
-  through: PostTag,
-  foreignKey: "post_id",
+  foreignKey: 'category_id'
 });
 
 //Category has many posts
 Category.hasMany(Post, {
-  foreignKey: "category_id",
+  foreignKey: 'category_id'
 });
 
-Category.hasMany(Tag, {
-  foreignKey: "category_id",
+//Comment belongs to one user
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
-
-Tag.belongsToMany(Category, {
-  through: "PostTag",
-  foreignKey: "tag_id"
-})
-
-// Tags belongToMany Post (through PostTag)
-Tag.belongsToMany(Post, {
-  through: PostTag,
-  foreignKey: "tag_id",
+//Comment belongs to one post
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
 });
 
+//User has many comments
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
 
+//Post has many comments
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
 
-module.exports = { User, Post, Category, Tag, PostTag };
+module.exports = { User, Post, Category, Comment };

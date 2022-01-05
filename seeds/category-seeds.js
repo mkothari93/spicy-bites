@@ -10,7 +10,7 @@ const categoryData = [
     category_name: 'Dinner',
   },
   {
-    category_name: 'Brunch',
+    category_name: 'Dessert',
   },
   {
     category_name: 'Snack',

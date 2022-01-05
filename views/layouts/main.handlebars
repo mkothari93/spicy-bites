@@ -20,8 +20,8 @@
     {{#if loggedIn}}
       <nav>
         <a href='/homepage'>Home</a>
-        {{!-- <a href='/'>View Recipes by Category</a>
-        <a href='/'>Create a post</a>         --}}
+        {{! <a href='/'>View Recipes by Category</a>
+        <a href='/'>Create a post</a>         }}
         <a href='/login'>Logout</a>
       </nav>
     {{/if}}
@@ -29,7 +29,7 @@
     <main>
       <aside>
         {{#unless loggedIn}}
-        <h2 class='text-center'>Be Ready To Devour These Recipes...</h2>
+          <h2 class='text-center'>Be Ready To Devour These Recipes...</h2>
         {{/unless}}
       </aside>
       <div>

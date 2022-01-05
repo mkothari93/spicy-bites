@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const { Post, User, Category, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //The `/api/posts` endpoint
 
 router.get('/', (req, res) => {
   //Finds all posts
   Post.findAll({
+    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
     //Includes its associated Category and User
     include: [
       {
@@ -39,8 +41,17 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    attributes: ['id', 'recipe_name', 'recipe_body', 'created_at'],
     //Includes its associated Categories and User
     include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: Category,
         attributes: ['id', 'category_name']
@@ -64,9 +75,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   //Creates a new post
-  Post.create(req.body)
+  Post.create({
+    recipe_title: req.body.recipe_title,
+    recipe_body: req.body.recipe_body,
+    user_id: req.session.user_id
+  })
     .then((newPost) => res.json(newPost))
     .catch((err) => {
       console.log(err);
@@ -74,13 +89,18 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   //Updates a post by its `id` value
-  Post.update(req.body, {
-    where: {
-      id: req.params.id
+  Post.update(
+    {
+      recipe_title: req.body.recipe_title
+    },
+    {
+      where: {
+        id: req.params.id
+      }
     }
-  })
+  )
     .then((updatedPost) => {
       if (!updatedPost[0]) {
         res.status(404).json({ message: 'No post found with this id' });
@@ -94,7 +114,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   //Deletes a post by its `id` value
   Post.destroy({
     where: {

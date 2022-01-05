@@ -2,9 +2,14 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Category } = require('../models');
 
+router.get('/', (req, res) => {
+  res.render('login');
+});
+
 router.get('/login', (req, res) => {
   res.render('login');
 });
+
 
 router.get('/logout', (req, res) => {
   res.render('logout');
@@ -35,29 +40,22 @@ router.get('/homepage', (req, res) => {
 });
 
 // get all posts
-router.get('/', (req, res) => {
-  Post.findAll({
-    attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      },
-      {
-        model: Category,
-        attributes: ['category_name']
-      }
-    ]
+router.get('/user-dashboard', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ['id', 'username'],
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render('homepage', { posts });
+    // .then((dbPostData) => {
+    //   const posts = dbPostData.map((post) => post.get({ plain: true }));
+      res.render('user-dashboard');
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+    // .catch((err) => {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // });
+// });
 
 // // get all posts
 // router.get('/', (req, res) => {

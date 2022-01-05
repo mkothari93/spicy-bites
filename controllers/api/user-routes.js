@@ -54,7 +54,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/signup', (req, res) => {
-  // expects {username: 'Lernantino',  password: 'password1234'}
   User.create({
     username: req.body.username,
     password: req.body.password
@@ -114,9 +113,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {username: 'Lernantino', password: 'password1234'}
-
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {

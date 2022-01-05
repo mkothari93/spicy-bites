@@ -3,12 +3,26 @@
   --secondary: #19BEB5;
   --tertiary: #E89005;
   --quatrinary: #1921BE;
-  --light: #bfd7ea; 
-  --dark: #0b3954; 
+  --light: #ffffff; 
+  --dark: #031620; 
   --border-radius: 0.3rem;
 }
 
 .login-card {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px 0;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.signup-card {
   display: flex;
   justify-content: center;
   margin: 0 0 20px 0;

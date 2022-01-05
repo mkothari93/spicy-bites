@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <h1>Welcome to Spicy Bites!</h1>
+      <h1 class='text-center'>Welcome to Spicy Bites!</h1>
     </header>
 
     <nav>
@@ -22,15 +22,15 @@
         <a href='/homepage'>Home</a>
         <a href='/login'>Logout</a>
         {{!-- <button id='logout' class='btn-no-style'>Logout</button> --}}
-      {{else}}
+      {{!-- {{else}}
         <!-- Otherwise, show a link to login -->
-        <a href='/login'>Login</a>
+        <a href='/login'>Login</a> --}}
       {{/if}}
     </nav>
 
     <main>
       <aside>
-        <h2>Devour the recipes!!</h2>
+        <h2 class='text-center'>Be Ready To Devour These Recipes...</h2>
       </aside>
       <div class='gallery'>
         {{{body}}}

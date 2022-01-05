@@ -5,13 +5,13 @@
   --quatrinary: #1921BE;
   --light: #ffffff; 
   --dark: #031620; 
-  --border-radius: 0.3rem;
+  --border-radius: 15px;
 }
 
 .login-card {
   display: flex;
   justify-content: center;
-  margin: 0 0 20px 0;
+  margin: 0 auto;
   max-width: 50%;
   padding: 5px;
   border: 3px solid var(--dark);
@@ -25,7 +25,7 @@
 .signup-card {
   display: flex;
   justify-content: center;
-  margin: 0 0 20px 0;
+  margin: 0 auto;
   max-width: 50%;
   padding: 5px;
   border: 3px solid var(--dark);
@@ -41,6 +41,7 @@ header h1 {
   color: var(--primary);
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
+  margin-bottom: 5%;
 }
 
 /* nav {
@@ -59,6 +60,21 @@ aside h2 {
   color: var(--quatrinary);
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  /* align-items: baseline; */
+}
+
+.form-group button{
+  background-color: var(--quatrinary);
+  color: var(--light);
+  border-radius: 10px;
 }
 
 img {

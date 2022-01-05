@@ -93,13 +93,14 @@ nav a {
 }
 
 .card-img {
-  height: 300px;
+  height: auto;
   width: 300px;
 }
 
 img {
-  height: 300px;
-  width: 300px;
+  height: auto;
+  width: 450px;
+  border-radius: 10px;
 }
 
 .post-list {

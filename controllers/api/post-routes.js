@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then((postData) => res.json(postData))
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -62,12 +62,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then((postData) => {
-      if (!postData) {
+    .then((dbPostData) => {
+      if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id.' });
         return;
       }
-      res.json(postData);
+      res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);
@@ -82,7 +82,7 @@ router.post('/', withAuth, (req, res) => {
     recipe_body: req.body.recipe_body,
     user_id: req.session.user_id
   })
-    .then((newPost) => res.json(newPost))
+    .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -101,12 +101,12 @@ router.put('/:id', withAuth, (req, res) => {
       }
     }
   )
-    .then((updatedPost) => {
-      if (!updatedPost[0]) {
+    .then((dbPostData) => {
+      if (!dbPostData[0]) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(updatedPost);
+      res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);
@@ -121,12 +121,12 @@ router.delete('/:id', withAuth, (req, res) => {
       id: req.params.id
     }
   })
-    .then((deletedPost) => {
-      if (!deletedPost) {
+    .then((dbPostData) => {
+      if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(deletedPost);
+      res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);

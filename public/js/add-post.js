@@ -11,7 +11,7 @@ async function newFormHandler(event) {
   const response = await fetch(`/api/posts`, {
     method: 'POST',
     body: JSON.stringify({
-      recipe_title,
+      recipe_name,
       recipe_body
     }),
     headers: {

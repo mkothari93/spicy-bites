@@ -1,18 +1,22 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const recipe_title = document.querySelector(
-    'input[name="recipe-title"]'
-  ).value;
+  const recipe_name = document.querySelector(
+    'textarea[name="recipe-name"]'
+  ).value.trim();
   const recipe_body = document.querySelector(
     'textarea[name="recipe-body"]'
-  ).value;
+  ).value.trim();
+  const filename = document.querySelector(
+    'input[name="filename"]'
+  ).value.trim();
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
     body: JSON.stringify({
       recipe_name,
-      recipe_body
+      recipe_body,
+      filename
     }),
     headers: {
       'Content-Type': 'application/json'

@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
   //Creates a new post
   Post.create({
-    recipe_title: req.body.recipe_title,
+    recipe_name: req.body.recipe_name,
     recipe_body: req.body.recipe_body,
     user_id: req.session.user_id
   })

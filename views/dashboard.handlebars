@@ -1,6 +1,6 @@
 <article class='dashboardPage'>
 
-  <div class='postTitle'>Welcome, {{username}}!</div>
+  <div class='postTitle'>Welcome!</div>
 
   <section>
     <h2>Create New Post</h2>
@@ -17,7 +17,7 @@
       </div>
 
       <div>
-        <label for='recipe-name'>instructions:</label>
+        <label for='recipe-name'>Instructions:</label>
         <textarea
           class='textarea-body'
           placeholder='Recipe instructions'
@@ -25,23 +25,48 @@
         ></textarea>
       </div>
 
+      <div>
+        <label for='file-upload'>Upload Photo:</label>
+        <input type="file" name="filename">
+        <input class='btn' type="submit">
+      </div>
       <button type='submit' class='btn'>Create</button>
     </form>
 
   </section>
 
   {{#if posts.length}}
-    <section>
-      <h2>Your Posts</h2>
-      <ol>
-        {{#each posts as |post|}}
-          <li>
-            {{!-- {{> post-info post}} --}}
-            <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
-          </li>
-        {{/each}}
-      </ol>
-    </section>
+  <section>
+    <h2>Your Posts</h2>
+      <ul class='post-list'>
+      {{#each posts}}
+      <li>
+        <article class='card post'>
+          <div class='card-title postTitle'>
+            <a href='/post/{{id}}'>{{recipe_name}}</a>
+          </div>
+
+          {{#if filename}}
+          <div>
+            <img src='images/{{filename}}' class='card-img' />
+          </div>
+          {{/if}}
+
+          <div class='card-text postCreator'>
+            By
+            {{user.username}}
+            on
+            {{format_date created_at}}
+          </div>
+          <a href='/dashboard/edit/{{id}}' class='edit-link'>Edit post</a>
+          {{!-- <div class='postCategory'>
+            Category:
+          {{category.category_name}} --}}
+        </article>
+      </li>
+      {{/each}}
+      </ul>
+  </section>
   {{/if}}
 
 </article>

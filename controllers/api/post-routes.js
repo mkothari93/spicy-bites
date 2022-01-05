@@ -93,7 +93,8 @@ router.put('/:id', withAuth, (req, res) => {
   //Updates a post by its `id` value
   Post.update(
     {
-      recipe_title: req.body.recipe_title
+      recipe_name: req.body.recipe_name,
+      recipe_body: req.body.recipe_body,
     },
     {
       where: {

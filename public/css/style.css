@@ -184,6 +184,7 @@ img {
 
 .comment-form,
 .new-post-form,
+.edit-post-form,
 .recipe-form,
 .textarea-body {
   display: flex;
@@ -202,13 +203,15 @@ img {
 
 .textarea-body {
   width: 45vw;
-  height: 4vw;
+  height: 6vw;
   border-color: var(--dark);
   border-radius: 10px;
   margin: 4px;
 }
 
-.btn {
+.btn,
+.edit-link,
+.delete-post-btn {
   background-color: var(--dark);
   color: var(--light);
   border-radius: 10px;

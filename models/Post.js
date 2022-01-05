@@ -18,7 +18,7 @@ Post.init(
       allowNull: false
     },
     recipe_body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     filename: {

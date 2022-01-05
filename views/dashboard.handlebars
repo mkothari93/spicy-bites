@@ -1,4 +1,4 @@
-<div>Welcome, {{username}}!</div>
+<div>Welcome, {{req.session.username}}!</div>
 
 <section>
   <h2>Create New Post</h2>
@@ -6,29 +6,35 @@
   <form class='new-post-form'>
     <div>
       <label for='recipe-name'>Your Recipe Title</label>
-      <input type='text' id='recipe-name' name='recipe-name' />
+      <textarea type='text' name='recipe-name' /></textarea>
     </div>
 
     <div>
-      <textarea placeholder='Recipe instructions' id='recipe-body'></textarea>
+      <label for='recipe-body'>Recipe Instructions</label>
+      <textarea class='comment-body' name='recipe-body'></textarea>
     </div>
 
-    <button type='submit' class='btn'>Create</button>
+    <div>
+      <label for='recipe-image'>Add Recipe Photo</label>
+      <input type="file" id="myFile" name="filename">
+    </div>
+
+    <button type='submit' class='commentBtn'>Create Recipe</button>
   </form>
 </section>
 
-{{#if posts.length}}
+{{!-- {{#if posts.length}}
   <section>
     <h2>Your Posts</h2>
     <ol>
       {{#each posts as |post|}}
         <li>
-          {{!-- {{> post-info post}} --}}
+          {{> post-info post}}
           <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
         </li>
       {{/each}}
     </ol>
   </section>
-{{/if}}
+{{/if}} --}}
 
 <script src='/js/add-post.js'></script>

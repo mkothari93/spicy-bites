@@ -6,9 +6,11 @@
           <a href='/post/{{id}}'>{{recipe_name}}</a>
         </div>
 
+        {{#if filename}}
         <div>
           <img src='images/{{filename}}' class='card-img'/>
         </div>
+        {{/if}}
 
         <div class='card-text postCreator'>
           by

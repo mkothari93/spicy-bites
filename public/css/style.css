@@ -1,75 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mohave&display=swap');
+
 :root {
-  --primary: #BD1922;
-  --secondary: #19BEB5;
-  --tertiary: #E89005;
-  --quatrinary: #1921BE;
-  --light: #ffffff; 
-  --dark: #031620; 
+  --primary: #dd4055;
+  --secondary: #188b7d;
+  --tertiary: #f46036;
+  --quatrinary: #2e294e;
+  --light: #ffffff;
+  --dark: #031620;
   --border-radius: 15px;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Mohave', sans-serif;
+}
+
 body {
-  background-image: url("../images/main.jpg");
+  background-image: url('../images/main.jpg');
   background-size: cover;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
-.login-card {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: var(--primary);
+a:hover {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 150ms;
+  transform: scale(1.1);
   color: var(--light);
 }
 
-.signup-card {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: var(--primary);
-  color: var(--light);
-}
-
-header h1 {
-  font-size: 75px;
-  color: var(--primary);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-aside h2 {
-  font-size: 45px;
-  color: var(--quatrinary);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  margin-bottom: 5%;
-}
-
-.form-group{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-}
-
-.form-group button{
-  background-color: var(--quatrinary);
-  color: var(--light);
-  border-radius: 10px;
-}
-
+/* MAIN PAGE */
 nav {
   display: flex;
   justify-content: space-around;
@@ -80,9 +44,65 @@ nav {
 
 nav a {
   color: var(--light);
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
+.page-title {
+  font-family: 'Comforter Brush', cursive;
+  font-size: 7rem;
+  font-weight: lighter;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.page-subtitle {
+  font-family: 'Comforter Brush', cursive;
+  font-size: 4rem;
+  font-weight: lighter;
+  color: var(--quatrinary);
+  margin-bottom: 5%;
+}
+
+/* LOGIN STYLES */
+.login-card,
+.signup-card {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem var(--light);
+  transition: transform 150ms;
+  transform: scale(1.03);
+  color: var(--light);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.form-group button {
+  background-color: var(--quatrinary);
+  color: var(--light);
+  border-radius: 10px;
+}
+/* END LOGIN STYLES */
+
+/* HOMEPAGE STYLES */
 .card {
   display: flex;
   flex-direction: column;
@@ -93,13 +113,14 @@ nav a {
 }
 
 .card-img {
-  height: auto;
+  height: 300px;
   width: 300px;
+  border-radius: 10px;
 }
 
 img {
-  height: auto;
-  width: 450px;
+  height: 300px;
+  width: auto;
   border-radius: 10px;
 }
 
@@ -110,22 +131,35 @@ img {
   justify-content: space-evenly;
 }
 
-.post-list li{
+.post-list li {
   list-style-type: none;
 }
 
 .post {
   font-size: 20px;
-  color: black;
+  color: var(--dark);
 }
 
-.postTitle a {
-  font-size: 25px;
+.postTitle,
+.postTitle a,
+.singlePostTitle a {
+  font-size: 1.8rem;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--dark);
 }
 
-.singlePost {
+.postTitle:hover,
+.singlePostTitle:hover {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 150ms;
+  transform: scale(1.1);
+}
+/* HOMEPAGE STYLES END */
+
+/* SINGLE POST STYLES */
+.singlePost,
+.dashboardPage {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -133,54 +167,68 @@ img {
   align-items: center;
 }
 
-.singlePostTitle a {
-  font-size: 35px;
-  font-weight: bold;
-  color: var(--primary);
-}
-
 .singlePostCreator {
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 5px;
 }
 
 .postBody {
-  width: 90%;
-  background-color: var(--tertiary);
+  width: 90vw;
+  background-color: var(--light);
   border-radius: 8px;
-  font-size: 18px;
-  font-family:Arial, Helvetica, sans-serif;
-  padding: 8px;
-  margin: 5px;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin: 0.5rem;
 }
 
-.comment-form {
+.comment-form,
+.new-post-form,
+.recipe-form,
+.textarea-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
 }
 
-.comment-body {
-  width: 50vw;
-  border-color: var(--quatrinary);
+.recipe-form {
+  width: 45vw;
+  height: 1vw;
+  border-color: var(--dark);
   border-radius: 10px;
   margin: 4px;
 }
 
-.commentBtn {
-  background-color: var(--quatrinary);
+.textarea-body {
+  width: 45vw;
+  height: 4vw;
+  border-color: var(--dark);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+.btn {
+  background-color: var(--dark);
   color: var(--light);
   border-radius: 10px;
   padding: 5px 10px;
 }
 
+.btn:hover {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 150ms;
+  transform: scale(1.1);
+  color: var(--light);
+}
+
 .comment {
-  background-color: var(--tertiary);
+  background-color: var(--light);
+  width: 45vw;
+  height: auto;
   border-radius: 8px;
-  font-size: 15px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
   padding: 5px;
   margin: 5px;
 }

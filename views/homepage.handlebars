@@ -1,32 +1,28 @@
-<ol class='post-list'>
+<ul class='post-list'>
   {{#each posts}}
     <li>
       <article class='post'>
-        <div class='title'>
+        <div class='postTitle'>
           <a href='/post/{{id}}'>{{recipe_name}}</a>
         </div>
 
         <div>
-          <img src='images/{{filename}}'/>
+          <img src='images/{{filename}}' />
         </div>
 
-        <div class='meta'>
+        <div class='postCreator'>
           by
           {{user.username}}
           on
           {{format_date created_at}}
         </div>
 
-        {{!-- <div class='meta'>
-          {{recipe_body}}
-        </div> --}}
-
-        <div class="meta">
-        Category:
-        {{category.category_name}}
-      </div>
+        <div class='postCategory'>
+          Category:
+          {{category.category_name}}
+        </div>
 
       </article>
     </li>
   {{/each}}
-</ol>
+</ul>

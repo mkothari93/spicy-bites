@@ -2,7 +2,7 @@ async function editFormHandler(event) {
     event.preventDefault();
   
     const recipe_name = document.querySelector('input[name="recipe-name"]').value.trim();
-    const recipe_name = document.querySelector('input[name="recipe-body"]').value.trim();
+    const recipe_body = document.querySelector('input[name="recipe-body"]').value.trim();
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];

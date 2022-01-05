@@ -1,36 +1,34 @@
-<nav>
-  <a href='/homepage'>Home</a>
-</nav>
+<article class='singlePost'>
 
-<article class='post'>
-
-  <div class='title'>
+  <div class='singlePostTitle'>
     <a href='/post/{{post.id}}'>{{post.recipe_name}}</a>
   </div>
 
   <div>
-    <img src='images/{{post.filename}}' />
+    <img src='/images/{{post.filename}}' />
   </div>
 
-  <div class='meta'>
-    {{post.recipe_body}}
-  </div>
-
-  <div class='meta'>
+  <div class='singlePostCreator'>
     Posted by
     {{post.user.username}}
     on
     {{post.created_at}}
   </div>
 
+  <div class='postBody'>
+    {{post.recipe_body}}
+  </div>
+
+
+
   {{#if loggedIn}}
     <form class='comment-form'>
       <div>
-        <textarea name='comment-body'></textarea>
+        <textarea class='comment-body' name='comment-body'></textarea>
       </div>
 
       <div>
-        <button type='submit'>add comment</button>
+        <button class='commentBtn' type='submit'>Add Comment</button>
       </div>
     </form>
   {{/if}}

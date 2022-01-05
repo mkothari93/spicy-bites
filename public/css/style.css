@@ -75,7 +75,7 @@ nav {
   justify-content: space-around;
   padding: 5px;
   background-color: var(--primary);
-  margin-bottom: 15px;
+  margin-bottom: 45px;
 }
 
 nav a {
@@ -101,4 +101,56 @@ img {
   font-size: 25px;
   font-weight: bold;
   color: var(--primary);
+}
+
+.singlePost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.singlePostTitle a {
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.singlePostCreator {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.postBody {
+  width: 90%;
+  background-color: var(--tertiary);
+  border-radius: 8px;
+  font-size: 18px;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 8px;
+  margin: 5px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.comment-body {
+  width: 50vw;
+  border-color: var(--quatrinary);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+.commentBtn {
+  background-color: var(--quatrinary);
+  color: var(--light);
+  border-radius: 10px;
+  padding: 5px 10px;
+  
 }

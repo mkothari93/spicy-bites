@@ -4,10 +4,12 @@ const userRoutes = require('./user-routes.js');
 const postRoutes = require('./post-routes');
 const categoryRoutes = require('./category-routes');
 const tagRoutes = require('./tag-routes');
+const commentRoutes = require('./comment-routes');
 
 router.use('/user', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/tags', tagRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;

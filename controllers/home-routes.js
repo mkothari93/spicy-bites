@@ -10,7 +10,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
 router.get('/logout', (req, res) => {
   res.render('logout');
 });
@@ -45,16 +44,16 @@ router.get('/user-dashboard', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'username'],
-  })
-    // .then((dbPostData) => {
-    //   const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render('user-dashboard');
-    })
-    // .catch((err) => {
-    //   console.log(err);
-    //   res.status(500).json(err);
-    // });
+    attributes: ['id', 'username']
+  });
+  // .then((dbPostData) => {
+  //   const posts = dbPostData.map((post) => post.get({ plain: true }));
+  res.render('user-dashboard');
+});
+// .catch((err) => {
+//   console.log(err);
+//   res.status(500).json(err);
+// });
 // });
 
 // // get all posts
@@ -109,7 +108,10 @@ router.get('/post/:id', (req, res) => {
       const post = dbPostData.get({ plain: true });
       console.log('post', post);
       // pass data to template
-      res.render('single-post', { post });
+      res.render('single-post', {
+        post,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch((err) => {
       console.log(err);

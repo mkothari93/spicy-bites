@@ -20,12 +20,20 @@ router.get('/homepage', (req, res) => {
     attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     include: [
       {
-        model: User,
-        attributes: ['username']
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       },
       {
         model: Category,
         attributes: ['category_name']
+      },
+      {
+        model: User,
+        attributes: ['username']
       }
     ]
   })
@@ -47,12 +55,20 @@ router.get('/post/:id', (req, res) => {
     attributes: ['id', 'recipe_name', 'recipe_body', 'filename', 'created_at'],
     include: [
       {
-        model: User,
-        attributes: ['username']
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       },
       {
         model: Category,
         attributes: ['category_name']
+      },
+      {
+        model: User,
+        attributes: ['username']
       }
     ]
   })

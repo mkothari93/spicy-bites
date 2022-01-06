@@ -80,6 +80,7 @@ router.post('/', withAuth, (req, res) => {
   Post.create({
     recipe_name: req.body.recipe_name,
     recipe_body: req.body.recipe_body,
+    filename: req.body.filename,
     user_id: req.session.user_id
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -95,6 +96,7 @@ router.put('/:id', withAuth, (req, res) => {
     {
       recipe_name: req.body.recipe_name,
       recipe_body: req.body.recipe_body,
+      filename: req.body.filename
     },
     {
       where: {

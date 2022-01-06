@@ -9,64 +9,66 @@
       <div>
         <label for='recipe-name'>Your recipe title:</label>
         <input
-          type='text'
-          id='recipe-name'
-          name='recipe-name'
+          name='newrecipe-name'
           class='recipe-form'
+          type='text'
+          id='newrecipe-name'
         />
       </div>
 
       <div>
         <label for='recipe-name'>Instructions:</label>
         <textarea
+          name='newrecipe-body'
           class='textarea-body'
           placeholder='Recipe instructions'
-          id='recipe-body'
+          id='newrecipe-body'
         ></textarea>
       </div>
 
       <div>
         <label for='file-upload'>Upload Photo:</label>
-        <input type="file" name="filename">
-        <input class='btn' type="submit">
+        <input type='file' name='filename' id='filename' />
+        <button type='submit' class='btn'>Create post</button>
       </div>
-      <button type='submit' class='btn'>Create</button>
+
     </form>
 
   </section>
 
   {{#if posts.length}}
-  <section>
-    <h2>Your Posts</h2>
+    <section>
+      <h2>Your Posts</h2>
       <ul class='post-list'>
-      {{#each posts}}
-      <li>
-        <article class='card post'>
-          <div class='card-title postTitle'>
-            <a href='/post/{{id}}'>{{recipe_name}}</a>
-          </div>
+        {{#each posts}}
+          <li>
+            <article class='card post'>
+              <div class='card-title postTitle'>
+                <a href='/post/{{id}}'>{{recipe_name}}</a>
+              </div>
 
-          {{#if filename}}
-          <div>
-            <img src='images/{{filename}}' class='card-img' />
-          </div>
-          {{/if}}
+              {{#if filename}}
+                <div>
+                  <img src='images/{{filename}}' class='card-img' />
+                </div>
+              {{/if}}
 
-          <div class='card-text postCreator'>
-            By
-            {{user.username}}
-            on
-            {{format_date created_at}}
-          </div>
-          <a href='/dashboard/edit/{{id}}' class='edit-link'>Edit post</a>
-          {{!-- <div class='postCategory'>
+              <div class='card-text postCreator'>
+                By
+                {{user.username}}
+                on
+                {{format_date created_at}}
+              </div>
+
+              <a href='/dashboard/edit/{{id}}' class='edit-link'>Edit post</a>
+              {{!-- <div class='postCategory'>
             Category:
           {{category.category_name}} --}}
-        </article>
-      </li>
-      {{/each}}
+            </article>
+          </li>
+        {{/each}}
       </ul>
-  </section>
+    </section>
   {{/if}}
 
 </article>

@@ -15,6 +15,7 @@ const hbs = exphbs.create({ helpers });
 const sequelize = require('./config/connection');
 
 const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 const sess = {
@@ -38,6 +39,6 @@ app.use(routes);
 //Syncs sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
+    console.log(`API server now on port ${PORT}!`);
   });
 });

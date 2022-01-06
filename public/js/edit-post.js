@@ -2,10 +2,10 @@ async function editFormHandler(event) {
   event.preventDefault();
 
   const recipe_name = document
-    .querySelector('input[name="recipe-name"]')
+    .querySelector('input[name="edit-recipe-name"]')
     .value.trim();
   const recipe_body = document
-    .querySelector('input[name="recipe-body"]')
+    .querySelector('input[name="edit-recipe-body"]')
     .value.trim();
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -14,8 +14,7 @@ async function editFormHandler(event) {
     method: 'PUT',
     body: JSON.stringify({
       recipe_name,
-      recipe_body,
-      filename
+      recipe_body
     }),
     headers: {
       'Content-Type': 'application/json'

@@ -219,6 +219,10 @@ img {
   padding: 5px 10px;
 }
 
+.delete-post-btn {
+  margin: 5px;
+}
+
 .btn:hover {
   color: inherit;
   text-decoration: none;

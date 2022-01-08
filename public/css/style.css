@@ -223,6 +223,10 @@ img {
   margin: 5px;
 }
 
+#edit-recipe-body {
+  height: 30vw;
+}
+
 .btn:hover {
   color: inherit;
   text-decoration: none;

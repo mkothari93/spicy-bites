@@ -5,7 +5,7 @@ async function editFormHandler(event) {
     .querySelector('input[name="edit-recipe-name"]')
     .value.trim();
   const recipe_body = document
-    .querySelector('input[name="edit-recipe-body"]')
+    .querySelector('textarea[name="edit-recipe-body"]')
     .value.trim();
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1

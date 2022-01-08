@@ -20,7 +20,6 @@ Post.init(
     recipe_body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      collate: 'utf8_general_ci'
     },
     filename: {
       type: DataTypes.STRING,

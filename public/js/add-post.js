@@ -11,25 +11,28 @@ async function newFormHandler(event) {
     .querySelector('input[name="filename"]')
     .value.trim();
 
-  const response = await fetch(`/api/posts`, {
-    method: 'POST',
-    body: JSON.stringify({
-      recipe_name,
-      recipe_body,
-      filename
-    }),
-    headers: {
-      'Content-Type': 'application/json'
+  if(recipe_name && recipe_body) {
+    const response = await fetch(`/api/posts`, {
+      method: 'POST',
+      body: JSON.stringify({
+        recipe_name,
+        recipe_body,
+        filename
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {  
+      document.location.replace('/dashboard');
+    } else {
+      alert(response.statusText);
     }
-  });
-
-  if (response.ok) {
-    document.location.replace('/dashboard');
   } else {
-    alert(response.statusText);
+    alert('Please enter the recipe title and instructions before creating a post.')
   }
-}
-
+}  
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);

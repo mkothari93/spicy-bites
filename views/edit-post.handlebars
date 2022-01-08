@@ -6,6 +6,7 @@
   <form class='edit-post-form'>
     <input type='hidden' name='post-id' value='{{post.id}}' />
     <div>
+      <label for='recipe-name'>Your recipe title:</label>
       <input
         name='edit-recipe-name'
         type='text'
@@ -13,13 +14,16 @@
         id='edit-recipe-name'
         value='{{post.recipe_name}}'
       />
-      <input
+    </div>
+    <div>
+       <label for='recipe-name'>Instructions:</label>
+      <textarea
         name='edit-recipe-body'
         type='text'
         class='textarea-body'
         id='edit-recipe-body'
         value='{{post.recipe_body}}'
-      />
+      /></textarea>
     </div>
 
     <button class='btn' type='submit'>Save Post</button>

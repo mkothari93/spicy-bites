@@ -16,7 +16,7 @@
   </div>
 
   <div class='postBody'>
-    {{post.recipe_body}}
+    {{#each post.recipe_body}}{{this}}<br />{{/each}}
   </div>
 
   {{#if loggedIn}}

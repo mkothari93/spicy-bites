@@ -78,6 +78,8 @@ router.get('/post/:id', (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
+      post.recipe_body = post.recipe_body.split('\n');
+      
       res.render('single-post', { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {

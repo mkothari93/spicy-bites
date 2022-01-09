@@ -68,6 +68,7 @@ nav a {
 .signup-card {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   margin: 0 auto;
   max-width: 50%;
@@ -223,8 +224,17 @@ img {
   margin: 5px;
 }
 
+.edit-form-image {
+  margin-bottom: 35px;
+}
+
 #edit-recipe-body {
   height: 30vw;
+}
+
+.edit-form-image-upload {
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
 .btn:hover {

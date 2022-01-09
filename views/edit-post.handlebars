@@ -3,7 +3,14 @@
   <h2>
     Edit Post
   </h2>
+
   <form class='edit-post-form'>
+    {{#if post.filename}}
+      <div class='edit-form-image'>
+        <img src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{post.filename}}' class='card-img' />
+      </div>
+    {{/if}}
+
     <input type='hidden' name='post-id' value='{{post.id}}' />
     <div>
       <label for='recipe-name'>Your recipe title:</label>

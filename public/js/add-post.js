@@ -11,11 +11,6 @@ async function newFormHandler(event) {
       method: 'POST',
       body: formData,
   })
-  // formData.append('recipe_photo', fileField.files[0]);
-  // const upload = await fetch('/api/upload/single', {
-  //   method: 'POST',
-  //   body: formData,
-  // })
 
   const data = await upload.json()
   console.log(data);

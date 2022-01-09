@@ -21,8 +21,6 @@
     {{#if loggedIn}}
       <nav>
         <a href='/homepage'>Home</a>
-        {{! <a href='/'>View Recipes by Category</a>
-        <a href='/'>Create a post</a>         }}
         <a href='/dashboard'>Your Posts</a>
         <a href='/login'>Logout</a>
       </nav>
@@ -39,9 +37,7 @@
       </div>
     </main>
 
-    <!-- If the user is logged in, load the JS script for when they logout -->
-    {{!-- {{#if loggedIn}} --}}
     <script src='/js/logout.js'></script>
-    {{!-- {{/if}} --}}
+
   </body>
 </html>

@@ -8,21 +8,19 @@
 
         {{#if filename}}
           <div>
-            <img src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{filename}}' class='card-img' />
+            <img
+              src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{filename}}'
+              class='card-img'
+            />
           </div>
         {{/if}}
 
         <div class='card-text postCreator'>
-          by
+          By
           {{user.username}}
           on
           {{format_date created_at}}
         </div>
-
-        {{!-- <div class='postCategory'>
-          Category:
-          {{category.category_name}}
-        </div> --}}
 
       </article>
     </li>

@@ -1,8 +1,5 @@
-require('dotenv').config();
-
 const Sequelize = require('sequelize');
-process.env.JAWSDB_URL =
-  'mysql://szzhmvhv8gp2y04r:me91s71syksw9w47@exbodcemtop76rnz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jl33h37uileruba5';
+require('dotenv').config();
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)

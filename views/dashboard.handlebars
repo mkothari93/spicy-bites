@@ -28,7 +28,7 @@
 
       <div>
         <label for='file-upload'>Upload Photo:</label>
-        <input type='file' name='recipe_photo'/>
+        <input type='file' name='recipe_photo' />
         <button type='submit' class='btn'>Create post</button>
       </div>
 
@@ -49,7 +49,10 @@
 
               {{#if filename}}
                 <div>
-                  <img src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{filename}}' class='card-img' />
+                  <img
+                    src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{filename}}'
+                    class='card-img'
+                  />
                 </div>
               {{/if}}
 
@@ -61,11 +64,7 @@
               </div>
 
               <a href='/dashboard/edit/{{id}}' class='edit-link'>Edit post</a>
-              {{!-- <a href='/dashboard/delete/{{id}}' class='delete-link'>Delete post</a> --}}
 
-              {{!-- <div class='postCategory'>
-            Category:
-          {{category.category_name}} --}}
             </article>
           </li>
         {{/each}}

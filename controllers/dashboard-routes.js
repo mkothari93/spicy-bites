@@ -25,9 +25,9 @@ router.get('/', withAuth, (req, res) => {
       }
     ]
   })
-    .then((dbPostData) => {
+    .then(dbPostData => {
       // serialize data before passing to template
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render('dashboard', { posts, loggedIn: true });
     })
     .catch((err) => {
@@ -54,7 +54,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then((dbPostData) => {
+    .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         
@@ -87,7 +87,7 @@ router.get('/delete', withAuth, (req, res) => {
       }
     ]
   })
-    .then((dbPostData) => {
+    .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         

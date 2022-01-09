@@ -55,16 +55,18 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
+    email: req.body.email,
     password: req.body.password
   })
-    .then((dbUserData) => {
+    .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
+
         res.json(dbUserData);
       });
     })
@@ -77,27 +79,26 @@ router.post('/signup', (req, res) => {
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
-      username: req.body.username
+      email: req.body.email
     }
-  }).then((dbUserData) => {
-    console.log(dbUserData);
+  }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'Username does not exist!' });
+      res.status(400).json({ message: 'Email does not exist!' });
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-    console.log(validPassword);
+
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
 
-    req.session.user_id = dbUserData.id;
-    req.session.username = dbUserData.username;
-    req.session.loggedIn = true;
-
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
@@ -120,7 +121,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then((dbUserData) => {
+    .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No username found with this id' });
         return;
@@ -139,7 +140,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then((dbUserData) => {
+    .then(dbUserData => {
       if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;

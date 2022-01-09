@@ -1,13 +1,13 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#user-login').value.trim();
+  const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  if (username && password) {
+  if (email && password) {
     const response = await fetch('/api/user/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -21,21 +21,22 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
+  
   const username = document.querySelector('#username-signup').value.trim();
-   const password = document.querySelector('#password-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
 
-  if (username && password) {
-    const response = await fetch('/api/user/signup', {
+  if (username && email && password) {
+    const response = await fetch('/api/user/', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       document.location.replace('/homepage');
     } else {
-      alert('Failed to sign up. Please try another username.');
+      alert('Failed to sign up. Please try another email address.');
     }
   }
 };

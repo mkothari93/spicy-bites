@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Category, Tag } = require('../../models');
+const { User, Post } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -27,14 +27,6 @@ router.get('/:id', (req, res) => {
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
-        include: {
-          model: Post,
-          attributes: ['recipe_name']
-        }
-      },
-      {
-        model: Category,
-        attributes: ['id', 'category_name'],
         include: {
           model: Post,
           attributes: ['recipe_name']

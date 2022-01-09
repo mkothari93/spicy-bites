@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const { Post, User, Category, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-//The `/api/posts` endpoint
 
 router.get('/', (req, res) => {
   //Finds all posts
@@ -17,10 +15,6 @@ router.get('/', (req, res) => {
           model: User,
           attributes: ['username']
         }
-      },
-      {
-        model: Category,
-        attributes: ['id', 'category_name']
       },
       {
         model: User,
@@ -51,10 +45,6 @@ router.get('/:id', (req, res) => {
           model: User,
           attributes: ['username']
         }
-      },
-      {
-        model: Category,
-        attributes: ['id', 'category_name']
       },
       {
         model: User,

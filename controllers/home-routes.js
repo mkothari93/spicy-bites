@@ -28,10 +28,6 @@ router.get('/homepage', (req, res) => {
         }
       },
       {
-        model: Category,
-        attributes: ['category_name']
-      },
-      {
         model: User,
         attributes: ['username']
       }
@@ -61,10 +57,6 @@ router.get('/post/:id', (req, res) => {
           model: User,
           attributes: ['username']
         }
-      },
-      {
-        model: Category,
-        attributes: ['category_name']
       },
       {
         model: User,

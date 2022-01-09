@@ -28,7 +28,7 @@
 
       <div>
         <label for='file-upload'>Upload Photo:</label>
-        <input type='file' name='filename' id='filename' />
+        <input type='file' name='recipe_photo' id='filename' />
         <button type='submit' class='btn'>Create post</button>
       </div>
 
@@ -49,7 +49,7 @@
 
               {{#if filename}}
                 <div>
-                  <img src='images/{{filename}}' class='card-img' />
+                  <img src={{filename}} class='card-img' />
                 </div>
               {{/if}}
 

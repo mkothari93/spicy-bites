@@ -7,9 +7,18 @@ async function newFormHandler(event) {
   const recipe_body = document
     .querySelector('textarea[name="newrecipe-body"]')
     .value.trim();
-  const filename = document
-    .querySelector('input[name="filename"]')
-    .value.trim();
+  const fileField = document
+    .querySelector('input[name="recipe_photo"]');
+  const formData = new FormData();
+
+  formData.append('recipe_photo', fileField.files[0]);
+  const upload = await fetch('/api/upload/single', {
+    method: 'POST',
+    body: formData,
+  })
+
+  const data = await upload.json()
+  const filename = data.pathname
 
   if(recipe_name && recipe_body) {
     const response = await fetch(`/api/posts`, {

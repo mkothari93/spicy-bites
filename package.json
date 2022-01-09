@@ -8,7 +8,6 @@
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
-    "email-validator": "^2.0.4",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
@@ -16,7 +15,7 @@
     "multer-s3": "^2.10.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.12.5",
-    "shortid": "^2.2.16"
+    "uuid": "^8.3.2"
   },
   "prettier": {
     "singleQuote": true,

@@ -28,7 +28,7 @@
 
       <div>
         <label for='file-upload'>Upload Photo:</label>
-        <input type='file' name='recipe_photo' id='filename' />
+        <input type='file' name='recipe_photo'/>
         <button type='submit' class='btn'>Create post</button>
       </div>
 
@@ -49,7 +49,7 @@
 
               {{#if filename}}
                 <div>
-                  <img src={{filename}} class='card-img' />
+                  <img src='https://project2-photo-storage.s3.us-east-2.amazonaws.com/{{filename}}' class='card-img' />
                 </div>
               {{/if}}
 

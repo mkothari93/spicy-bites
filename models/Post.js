@@ -44,8 +44,6 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    charset: 'utf8', 
-    dialectOptions: { collate: 'utf8_general_ci' },
     modelName: 'post'
   }
 );

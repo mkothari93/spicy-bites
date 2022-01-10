@@ -1,5 +1,7 @@
 # <strong>Spicy Bites</strong>
-Spicy Bites is an application that allows user to post and view recipes. Once the user signs up, they can create posts to share their recipes, as well as edit and delete them and check comments made by other users. Comments can be added on all recipes by all users. User can also check when the recipe and comments have been posted.
+![badge](https://img.shields.io/badge/License-MIT-blue.svg)
+
+Spicy Bites is an application that allows user to post and view recipes. Once the user signs up, they can create posts to share their recipes. In addition, the user will also be able to edit and delete these posts. Users will also be able to view comments made by other users on their posts and other recipe posts. Comments can be added on all recipes by all users. User can also check when the recipe and comments have been posted.
 
 <br/>
 
@@ -22,7 +24,6 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 <br/>
 
 ## <strong>Table of contents</strong>
-- [Description](#description)
 - [Installation](#Installation)
 - [Setting Up](#SettingUp)
 - [Setting Up Your Own AWS Bucket](#Setting-Up-Your-Own-AWS-Bucket)
@@ -36,7 +37,18 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 <br/>
 
 ## <strong>Installation</strong>
-You can clone the repository and run the $npm i command in your terminal. Create an .env file and configure your MySQL login information and AWS Bucket. You can check for examples on this README file.
+---
+To install this application, clone this repository. Run $npm i command in the terminal. Create an .env file and add appropriate values to the following information:
+```
+ DB_NAME=''
+ DB_USER=''
+ DB_PW=''
+ JAWSDB_URL=''
+ AWS_ACCESS_KEY_ID=''
+ AWS_SECRET_ACCESS_KEY=''
+ AWS_BUCKET_NAME= ''
+```
+<br/>
 
 <br/>
 
@@ -68,20 +80,6 @@ AWS_DEFAULT_REGION='your-region'
 On views > dashboard, homepage, edit-post, single-post, you also have to update the `<img>` tag according to your bucket information:
 ```
 https://your-bucket-name.s3.us-region.amazonaws.com/>
-```
-<br/>
-
-## <strong>Installation</strong>
----
-To install this application, clone this repository. Run $npm i command in the terminal. Create an .env file and add appropriate values to the following information:
-```
- DB_NAME=''
- DB_USER=''
- DB_PW=''
- JAWSDB_URL=''
- AWS_ACCESS_KEY_ID=''
- AWS_SECRET_ACCESS_KEY=''
- AWS_BUCKET_NAME= ''
 ```
 <br/>
 

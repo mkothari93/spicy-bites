@@ -4,7 +4,6 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 <br/>
 
 ## <strong>Built With</strong>
----
 * HTML
 * CSS / Bootstrap
 * JavaScript
@@ -23,7 +22,6 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 <br/>
 
 ## <strong>Table of contents</strong>
----
 - [Description](#description)
 - [Installation](#Installation)
 - [Setting Up](#SettingUp)
@@ -38,13 +36,12 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 <br/>
 
 ## <strong>Installation</strong>
----
 You can clone the repository and run the $npm i command in your terminal. Create an .env file and configure your MySQL login information and AWS Bucket. You can check for examples on this README file.
 
 <br/>
 
 ## <strong>Setting Up</strong>
----
+
 ### Setting Up MySQL
 <br/>
 To set up your MySQL credentials, use the following exemple:
@@ -89,13 +86,11 @@ To install this application, clone this repository. Run $npm i command in the te
 <br/>
 
 ## <strong>Contributing</strong>
----
 To contibute with this project, please contact one of the collaborators.
 
 <br/>
 
 ## <strong>Collaborators</strong>
----
 If you have questions or suggetions, please reach out: <br/>
 [GitHub - Monika Kothari](https://github.com/mkothari93) -- <mkothari.1993@gmail.com><br/>
 [GitHub - Letícia Nardi](https://github.com/leticianardi) -- <leticia.tnardi@gmail.com><br/>
@@ -105,7 +100,6 @@ If you have questions or suggetions, please reach out: <br/>
 <br/>
 
 ## <strong>Deployed</strong>
----
 You can visit the deployed application here: <https://spicy-bites.herokuapp.com>
 
 <br/>

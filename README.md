@@ -25,13 +25,9 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 
 ## <strong>Table of contents</strong>
 - [Installation](#Installation)
-- [Setting Up](#SettingUp)
-- [Setting Up Your Own AWS Bucket](#Setting-Up-Your-Own-AWS-Bucket)
-- [Setting Up MySQL](#SettingUpMySQL)
-- [Installing Packages](#Installing-Packages)
-- [Contributing](#contributing)
+- [Setting Up](#Setting-Up)
+- [Contributing](#Contributing)
 - [Collaborators](#Collaborators)
-- [Questions](#questions)
 - [Deployed](#Deployed)
 
 <br/>

@@ -15,6 +15,7 @@
     "multer-s3": "^2.10.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.12.5",
+    "serve": "^13.0.2",
     "uuid": "^8.3.2"
   },
   "prettier": {

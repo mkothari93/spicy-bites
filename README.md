@@ -28,8 +28,9 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 - [Setting Up MySQL](#SettingUpMySQL)
 - [Installing Packages](#Installing-Packages)
 - [Contributing](#contributing)
-- [Tests](#tests)
+- [Collaborators](#Collaborators)
 - [Questions](#questions)
+- [Deployed](#Deployed)
 
 ## Installation
 
@@ -67,22 +68,26 @@ https://bucket-name.s3.us-region.amazonaws.com/>
 
 ## Installing Packages
 
-To make this app work correctly, install the required packages using the following command:
+To install all the required packages, run the following command:
 
 ```
 
-npm i express-session connect-session-sequelize dotenv express mysql2 sequelize email-validator bcrypt
+npm i express-session connect-session-sequelize dotenv express mysql2 sequelize email-validator bcrypt aws-s3 multer multer-s3 uuid
 
 ```
 
-AWS
+## Contributing
 
-```
+To contibute with this project, please contact one of the collaborators.
 
-npm install --save image-uploader
+### Collaborators
 
-```
+If you have questions or suggetions, please reach out:
+[Hares Nayabkhil](https://github.com/greenlight510)
+[Leticia Nardi](https://github.com/leticianardi)
+[Monika Kothari](https://github.com/mkothari93)
+[Rafael Cardoso](https://github.com/raf203)
 
-```
+## Deployed
 
-```
+You can visit the deployed application [here]

@@ -34,7 +34,7 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 
 ## <strong>Installation</strong>
 ---
-To install this application, clone this repository. Run $npm i command in the terminal. Create an .env file and add appropriate values to the following information:
+To install this application, clone this repository. Run '$npm i' command in the terminal. Create an .env file and add appropriate values to the following information:
 ```
  DB_NAME=''
  DB_USER=''

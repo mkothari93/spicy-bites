@@ -39,7 +39,7 @@ Spicy Bites is an application that allows user to post and view recipes. Once th
 
 ## <strong>Installation</strong>
 ---
-You can clone the repository and run the command `npm i`. Create your .env file and configure your MySQL login information and AWS Bucket. You can check for exemples on this README file.
+You can clone the repository and run the $npm i command in your terminal. Create an .env file and configure your MySQL login information and AWS Bucket. You can check for examples on this README file.
 
 <br/>
 
@@ -106,6 +106,6 @@ If you have questions or suggetions, please reach out: <br/>
 
 ## <strong>Deployed</strong>
 ---
-You can visit the deployed application here: [Spicy Bites](https://spicy-bites.herokuapp.com/)
+You can visit the deployed application here: <https://spicy-bites.herokuapp.com>
 
 <br/>
